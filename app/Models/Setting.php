@@ -9,6 +9,6 @@ class Setting extends Model
 
     protected $table = 'settings';
     public $timestamps = true;
-    protected $fillable = array('notification_text', 'about_app', 'phone', 'email', 'fb_link', 'tw_link', 'instgram_link', 'youtube_link');
+    protected $fillable = array('contact_text','ios_link','android_link','notification_text', 'about_app', 'phone', 'email', 'fb_link', 'tw_link', 'instgram_link', 'youtube_link');
 
 }

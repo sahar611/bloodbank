@@ -10,7 +10,7 @@ class Client extends Authenticatable
 
     protected $table = 'clients';
     public $timestamps = true;
-    protected $fillable = array('name', 'phone', 'email', 'password', 'blood_type_id', 'date_of_birth', 'last_donation_date', 'city_id', 'pin_code');
+    protected $fillable = array('name', 'activate','phone', 'email', 'password', 'blood_type_id', 'date_of_birth', 'last_donation_date', 'city_id', 'pin_code');
 
     public function BloodType()
     {
@@ -22,27 +22,27 @@ class Client extends Authenticatable
         return $this->belongsTo('App\Models\City');
     }
 
-    public function DonationRequests()
+    public function donationRequests()
     {
         return $this->hasMany('App\Models\DonationRequest');
     }
 
-    public function Posts()
+    public function posts()
     {
         return $this->morphedByMany('App\Models\Post', 'clientable');
     }
 
-    public function Notifications()
+    public function notifications()
     {
         return $this->morphedByMany('App\Models\Notification', 'clientable');
     }
 
-    public function Governorates()
+    public function governorates()
     {
         return $this->morphedByMany('App\Models\Governorate', 'clientable');
     }
 
-    public function BloodTypeClintable()
+    public function bloodTypes()
     {
         return $this->morphedByMany('App\Models\BloodType', 'clientable');
     }

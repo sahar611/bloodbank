@@ -29,6 +29,15 @@ Route::group(['middleware'=>'auth:api'],function(){
     Route::get('blood_types','MainController@blood_types');
     Route::get('settings','MainController@settings');
     Route::post('contact','MainController@contacts');
+    Route::post('profile','AuthController@profile');
+    Route::post('reset_password','AuthController@reset_password');
+    Route::post('save_password','AuthController@save_password');
+    Route::post('toggle_favourites','MainController@postFavourites');
+    Route::get('favourites_list','MainController@myFavourites');
+    Route::post('donation_request','MainController@donationRequest');
+    Route::post('notification_settings','MainController@NotificationSettings');
+
+
 
 
 
