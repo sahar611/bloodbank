@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespace' =>'Front','middleware' => 'auth:client_web'], function () {
-
-    Route::get('/', 'MainController@home');
+Route::get('/', 'MainController@home');
     Route::get('about', 'MainController@about');
     Route::get('articles', 'MainController@articles');
     Route::get('article/{id}', 'MainController@article');
@@ -26,6 +24,9 @@ Route::group(['namespace' =>'Front','middleware' => 'auth:client_web'], function
     Route::get('search-donation', 'MainController@searchDonation');
     Route::get('client-register', 'AuthController@register');
     Route::post('store-client', 'AuthController@storeClient');
+Route::group(['namespace' =>'Front','middleware' => 'auth:client_web'], function () {
+
+    
     Route::get('donation-request', 'AuthController@askDonation');
 
     Route::post('ask-donation', 'AuthController@storeDonation');
