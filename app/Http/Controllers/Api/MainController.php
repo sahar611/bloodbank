@@ -96,7 +96,7 @@ class MainController extends Controller
 
     }
     public function myFavourites(Request $request){
-      $posts=$request->user()->posts();
+      $posts=$request->user()->posts->paginate(20);;
       return resposeJson(1, 'success', $posts);
 
 

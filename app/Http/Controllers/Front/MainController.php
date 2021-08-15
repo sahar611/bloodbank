@@ -16,8 +16,8 @@ class MainController extends Controller
     public function home(Request $request)
 {
     
-    $client=Client::first();
-    auth('client_web')->login($client);
+    // $client=Client::first();
+    // auth('client_web')->login($client);
     $posts=Post::take(9)->get(); 
     $donations=DonationRequest::take(9)->get();
     $city = DB::table('cities')->get();
